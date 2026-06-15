@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>API_PetHealth</RootNamespace>
+      <UserSecretsId>767f57e1-884a-4a3f-b9e8-232136b933e8</UserSecretsId>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.9" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
+        <PackageReference Include="Scalar.AspNetCore" Version="2.14.14" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PetHealth.Application\PetHealth.Application.csproj" />
+      <ProjectReference Include="..\PetHealth.Infrastructure\PetHealth.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
