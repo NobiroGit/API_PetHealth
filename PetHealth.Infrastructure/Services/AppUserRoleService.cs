@@ -24,12 +24,15 @@ public class AppUserRoleService : IAppUserRoleRepository
         _dbConnection.Open();
     }
 
+    #region GET
+
     public async Task<Result<IEnumerable<AppUserRoleDto>>> Execute(GetAllAppUserRoleQueriesAsync query)
     {
         try
         {
             var appUserRoles = (await _dbConnection.QueryAsync<AppUserRole>("Usp_AppUserRole_GetAll",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).Select(i => i.ToAppUserRoleDto()).ToList();
+                    commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query)))
+                .Select(i => i.ToAppUserRoleDto()).ToList();
             if (!appUserRoles.Any()) return Result<IEnumerable<AppUserRoleDto>>.Failure(Error.NotFound);
             return Result<IEnumerable<AppUserRoleDto>>.Success(appUserRoles);
         }
@@ -38,6 +41,10 @@ public class AppUserRoleService : IAppUserRoleRepository
             return Result<IEnumerable<AppUserRoleDto>>.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
+
+    #region POST
 
     public async Task<Result> Execute(AssignUserRoleCommandAsync command)
     {
@@ -53,6 +60,10 @@ public class AppUserRoleService : IAppUserRoleRepository
         }
     }
 
+    #endregion
+
+    #region DELETE
+
     public async Task<Result> Execute(RemoveUserRoleCommandAsync command)
     {
         try
@@ -66,4 +77,6 @@ public class AppUserRoleService : IAppUserRoleRepository
             return Result.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
 }

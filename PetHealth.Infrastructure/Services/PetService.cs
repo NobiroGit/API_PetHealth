@@ -24,11 +24,14 @@ public class PetService : IPetRepository
         _dbConnection.Open();
     }
 
+    #region GET
+
     public async Task<Result<IEnumerable<PetDto>>> Execute(GetAllPetsQueryAsync query)
     {
         try
         {
-            List<Pet> pets = (await _dbConnection.QueryAsync<Pet>("Usp_Pet_GetAll", commandType:CommandType.StoredProcedure, param:_currentUserRepository.WithUser(query))).ToList();
+            List<Pet> pets = (await _dbConnection.QueryAsync<Pet>("Usp_Pet_GetAll",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
             if (!pets.Any()) return Result<IEnumerable<PetDto>>.Failure(Error.NotFound);
 
             return Result<IEnumerable<PetDto>>.Success(pets.Select(p => p.MapToPetDto()).ToList());
@@ -43,7 +46,8 @@ public class PetService : IPetRepository
     {
         try
         {
-            Pet? pet = await _dbConnection.QueryFirstOrDefaultAsync<Pet>("Usp_Pet_GetById", commandType: CommandType.StoredProcedure,
+            Pet? pet = await _dbConnection.QueryFirstOrDefaultAsync<Pet>("Usp_Pet_GetById",
+                commandType: CommandType.StoredProcedure,
                 param: _currentUserRepository.WithUser(query));
 
             if (pet == null) return Result<PetDto?>.Failure(Error.NotFound);
@@ -55,6 +59,10 @@ public class PetService : IPetRepository
             return Result<PetDto?>.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
+
+    #region POST
 
     public async Task<Result<int>> Execute(InsertPetCommandAsync command)
     {
@@ -79,20 +87,9 @@ public class PetService : IPetRepository
         }
     }
 
-    public async Task<Result> Execute(DeletePetCommandAsync command)
-    {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Pet_Delete",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+    #endregion
 
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-    }
+    #region PUT
 
     public async Task<Result> Execute(UpdatePetCommandAsync command)
     {
@@ -109,11 +106,16 @@ public class PetService : IPetRepository
         }
     }
 
+    #endregion
+
+    #region PATCH
+
     public async Task<Result> Execute(UpdatePetPseudoCommandAsync command)
     {
         try
         {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Pet_Update_Pseudo", commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+            int rows = await _dbConnection.ExecuteAsync("Usp_Pet_Update_Pseudo",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
 
             return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
         }
@@ -122,4 +124,25 @@ public class PetService : IPetRepository
             return Result.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
+
+    #region DELETE
+
+    public async Task<Result> Execute(DeletePetCommandAsync command)
+    {
+        try
+        {
+            int rows = await _dbConnection.ExecuteAsync("Usp_Pet_Delete",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+
+            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
+        }
+        catch (SqlException e)
+        {
+            return Result.Failure(new Error(e.ToError()));
+        }
+    }
+
+    #endregion
 }

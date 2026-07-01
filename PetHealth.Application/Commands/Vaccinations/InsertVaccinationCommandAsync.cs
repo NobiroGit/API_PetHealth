@@ -7,6 +7,7 @@ namespace PetHealth.Application.Commands.Vaccinations;
 public class InsertVaccinationCommandAsync: ICommandDefinitionAsync<Result>
 {
     public int PetId { get; init; }
+    public int VetId { get; init; }
     public string VaccineName { get; init; }
     public DateOnly VaccinationDate { get; init; }
     public DateOnly? NextBoosterDate { get; init; }
@@ -15,6 +16,7 @@ public class InsertVaccinationCommandAsync: ICommandDefinitionAsync<Result>
     public InsertVaccinationCommandAsync(InsertVaccinationDto dto)
     {
         PetId = dto.PetId;
+        VetId = dto.VetId;
         VaccineName = dto.VaccineName;
         VaccinationDate = dto.VaccinationDate;
         NextBoosterDate = dto.NextBoosterDate;

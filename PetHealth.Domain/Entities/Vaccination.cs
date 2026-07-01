@@ -5,6 +5,7 @@ public class Vaccination
     //Properties
     public int Id { get; set; }
     public int PetId { get; set; }
+    public int VetId { get; set; }
     public string VaccineName { get; set; } = string.Empty;
     public DateOnly VaccinationDate { get; set; }
     public DateOnly? NextBoosterDate { get; set; }

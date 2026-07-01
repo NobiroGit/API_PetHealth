@@ -15,3 +15,4 @@
 /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/obj/Debug/net10.0/refint/PetHealth.Infrastructure.dll
 /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/obj/Debug/net10.0/PetHealth.Infrastructure.pdb
 /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/obj/Debug/net10.0/ref/PetHealth.Infrastructure.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/obj/Debug/net10.0/PetHealth.Infrastructure.sourcelink.json

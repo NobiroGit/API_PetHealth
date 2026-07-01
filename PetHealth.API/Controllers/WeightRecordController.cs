@@ -24,7 +24,7 @@ public class WeightRecordController : Controller
     [HttpGet("{petId:int}")]
     public async Task<ActionResult<Result<IEnumerable<WeightRecordDto>>>> GetWeightRecordByPetId(int petId)
     {
-        var result = await _weightRecordRepository.Execute(new GetWeightRecordByPetIdQueryAsync(petId));
+        Result<IEnumerable<WeightRecordDto>> result = await _weightRecordRepository.Execute(new GetWeightRecordByPetIdQueryAsync(petId));
         if (!result.IsSuccess) return NotFound(result.Error);
         return Ok(result.Data);
     }
@@ -36,7 +36,7 @@ public class WeightRecordController : Controller
     [HttpPost]
     public async Task<ActionResult<Result>> InsertWeightRecordAsync([FromBody] InsertWeightRecordDto weightRecordDto)
     {
-        var result = await _weightRecordRepository.Execute(new InsertWeightRecordCommandAsync(weightRecordDto));
+        Result result = await _weightRecordRepository.Execute(new InsertWeightRecordCommandAsync(weightRecordDto));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);
     }
@@ -49,7 +49,7 @@ public class WeightRecordController : Controller
     public async Task<ActionResult<Result>> UpdateWeightRecordAsync([FromBody] UpdateWeightRecordDto weightRecordDto,
         int id)
     {
-        var result = await _weightRecordRepository.Execute(new UpdateWeightRecordCommandAsync(weightRecordDto, id));
+        Result result = await _weightRecordRepository.Execute(new UpdateWeightRecordCommandAsync(weightRecordDto, id));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);
     }
@@ -61,7 +61,7 @@ public class WeightRecordController : Controller
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Result>> DeleteWeightRecordAsync(int id)
     {
-        var result = await _weightRecordRepository.Execute(new DeleteWeightRecordCommandAsync(id));
+        Result result = await _weightRecordRepository.Execute(new DeleteWeightRecordCommandAsync(id));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);
     }

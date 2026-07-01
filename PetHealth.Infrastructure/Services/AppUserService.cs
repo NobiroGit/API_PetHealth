@@ -24,13 +24,52 @@ public class AppUserService : IAppUserRepository
         _dbConnection.Open();
     }
 
+
+    #region LOGIN / REGISTER
+
+    public async Task<Result<JwtInfoAppUserDto>> Execute(LoginAppUserCommandAsync command)
+    {
+        try
+        {
+            var jwtInfo = await _dbConnection.QueryFirstOrDefaultAsync<JwtInfoAppUserDto>("Usp_AppUser_Login",
+                commandType: CommandType.StoredProcedure, param: command);
+            if (jwtInfo == null)
+                return Result<JwtInfoAppUserDto>.Failure(Error.NotFound);
+
+            return Result<JwtInfoAppUserDto>.Success(jwtInfo);
+        }
+        catch (SqlException e)
+        {
+            return Result<JwtInfoAppUserDto>.Failure(new Error(e.ToError()));
+        }
+    }
+
+    public async Task<Result> Execute(RegisterAppUserCommandAsync command)
+    {
+        try
+        {
+            int rows = await _dbConnection.ExecuteAsync("Usp_AppUser_Register",
+                commandType: CommandType.StoredProcedure, param: command);
+            if (rows == 1) return Result.Success();
+        }
+        catch (SqlException e)
+        {
+            return Result.Failure(new Error(e.ToError()));
+        }
+        return Result.Failure(Error.NotFound);
+    }
+    #endregion
+
+    #region GET
+
 //ADMIN
     public async Task<Result<IEnumerable<AppUserDto>>> Execute(GetAllAppUserAsync query)
     {
         try
         {
             List<AppUser> petOwners =
-                (await _dbConnection.QueryAsync<AppUser>("Usp_AppUser_GetAll", param: _currentUserRepository.WithUser(query)))
+                (await _dbConnection.QueryAsync<AppUser>("Usp_AppUser_GetAll",
+                    param: _currentUserRepository.WithUser(query)))
                 .ToList();
             if (!petOwners.Any()) return Result<IEnumerable<AppUserDto>>.Failure(Error.NotFound);
 
@@ -60,18 +99,21 @@ public class AppUserService : IAppUserRepository
         }
     }
 
-//ADMIN
-    public async Task<Result<int>> Execute(InsertAppUserCommandAsync command)
+    #endregion
+
+    #region POST
+
+    public async Task<Result<int>> Execute(InsertVetAppUserCommandAsync command)
     {
         try
         {
             var parameters = _currentUserRepository.WithUser(command);
             parameters.Add("NewId", DbType.Int32, direction: ParameterDirection.Output);
 
-            int rows = await _dbConnection.ExecuteAsync("Usp_AppUser_Insert",
+            int rows = await _dbConnection.ExecuteAsync("Usp_AppUser_InsertVet",
                 commandType: CommandType.StoredProcedure, param: parameters);
 
-            if (rows == 1)
+            if (rows > 1)
             {
                 int newId = parameters.Get<int>("@NewId");
                 return Result<int>.Success(newId);
@@ -85,24 +127,10 @@ public class AppUserService : IAppUserRepository
         }
     }
 
-//ADMIN
-    public async Task<Result> Execute(DeleteAppUserCommandAsync command)
-    {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_AppUser_Delete",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            if (rows == 1) return Result.Success();
+    #endregion
 
-            return Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-    }
+    #region PUT
 
-//ADMIN
     public async Task<Result> Execute(UpdateAppUserCommandAsync command)
     {
         try
@@ -117,6 +145,10 @@ public class AppUserService : IAppUserRepository
             return Result.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
+
+    #region PATCH
 
     public async Task<Result> Execute(UpdateEmailAppUserCommandAsync command)
     {
@@ -147,4 +179,26 @@ public class AppUserService : IAppUserRepository
             return Result.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
+
+    #region DELETE
+
+    public async Task<Result> Execute(DeleteAppUserCommandAsync command)
+    {
+        try
+        {
+            int rows = await _dbConnection.ExecuteAsync("Usp_AppUser_Delete",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+            if (rows == 1) return Result.Success();
+
+            return Result.Failure(Error.NotFound);
+        }
+        catch (SqlException e)
+        {
+            return Result.Failure(new Error(e.ToError()));
+        }
+    }
+
+    #endregion
 }

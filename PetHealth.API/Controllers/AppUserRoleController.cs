@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.AppUserRoles;
 using PetHealth.Application.Common.DTOs.AppUserRoleDto;
@@ -9,6 +10,9 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Roles = "Admin")]
+
+//Pour chaque service je dois vérifier que l'utilisateur est admin'
 
 public class AppUserRoleController : Controller
 {
@@ -24,7 +28,7 @@ public class AppUserRoleController : Controller
     [HttpGet]
     public async Task<ActionResult<Result<IEnumerable<AppUserRoleDto>>>> GetAllAppUserRoles()
     {
-        var appUserRoles = await _appUserRoleRepository.Execute(new GetAllAppUserRoleQueriesAsync());
+        Result<IEnumerable<AppUserRoleDto>> appUserRoles = await _appUserRoleRepository.Execute(new GetAllAppUserRoleQueriesAsync());
         if (!appUserRoles.IsSuccess)
             return BadRequest(appUserRoles.Error);
         return Ok(appUserRoles.Data);

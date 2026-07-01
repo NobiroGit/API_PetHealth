@@ -24,13 +24,15 @@ public class WeightRecordService : IWeightRecordRepository
         _dbConnection.Open();
     }
 
+    #region GET
+
     public async Task<Result<IEnumerable<WeightRecordDto>>> Execute(GetWeightRecordByPetIdQueryAsync query)
     {
         try
         {
             var weightRecords =
                 (await _dbConnection.QueryAsync<WeightRecord>("Usp_WeightRecord_GetByPetId",
-                    commandType: CommandType.StoredProcedure, param:_currentUserRepository.WithUser(query))).ToList();
+                    commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
             if (!weightRecords.Any()) return Result<IEnumerable<WeightRecordDto>>.Failure(Error.NotFound);
             return Result<IEnumerable<WeightRecordDto>>.Success(weightRecords.Select(i => i.ToWeightRecordDto()));
         }
@@ -40,13 +42,17 @@ public class WeightRecordService : IWeightRecordRepository
         }
     }
 
+    #endregion
+
+    #region POST
+
     public async Task<Result> Execute(InsertWeightRecordCommandAsync command)
     {
         try
         {
             var parameters = new DynamicParameters(command);
             parameters.Add("@WeightKg", command.WeightKg, DbType.Decimal, precision: 6, scale: 3);
-            
+
             int rows = await _dbConnection.ExecuteAsync("Usp_WeightRecord_Insert",
                 commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
             return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
@@ -57,11 +63,16 @@ public class WeightRecordService : IWeightRecordRepository
         }
     }
 
+    #endregion
+
+    #region PUT
+
     public async Task<Result> Execute(UpdateWeightRecordCommandAsync command)
     {
         try
         {
-            int rows = await _dbConnection.ExecuteAsync("Usp_WeightRecord_Update", commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+            int rows = await _dbConnection.ExecuteAsync("Usp_WeightRecord_Update",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
             return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
         }
         catch (SqlException e)
@@ -70,11 +81,16 @@ public class WeightRecordService : IWeightRecordRepository
         }
     }
 
+    #endregion
+
+    #region DELETE
+
     public async Task<Result> Execute(DeleteWeightRecordCommandAsync command)
     {
         try
         {
-            int rows = await _dbConnection.ExecuteAsync("Usp_WeightRecord_Delete", commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+            int rows = await _dbConnection.ExecuteAsync("Usp_WeightRecord_Delete",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
             return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
         }
         catch (SqlException e)
@@ -82,4 +98,6 @@ public class WeightRecordService : IWeightRecordRepository
             return Result.Failure(new Error(e.ToError()));
         }
     }
+
+    #endregion
 }

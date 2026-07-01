@@ -72,3 +72,14 @@
 /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/obj/Debug/net10.0/PetHealth.API.genruntimeconfig.cache
 /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/obj/Debug/net10.0/ref/PetHealth.API.dll
 /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/obj/Debug/net10.0/PetHealth.API.sourcelink.json
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.AspNetCore.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Extensions.Hosting.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Extensions.Logging.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Formatting.Compact.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Settings.Configuration.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Sinks.Console.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Sinks.Debug.dll
+/Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/bin/Debug/net10.0/Serilog.Sinks.File.dll

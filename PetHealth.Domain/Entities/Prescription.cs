@@ -6,6 +6,4 @@ public class Prescription
     public int Id { get; set; }
     public int AppointmentId { get; set; }
     public DateOnly IssueDate { get; set; }
-    public string? FileUrl { get; set; }
-    
 }

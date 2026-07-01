@@ -10,6 +10,9 @@ public class UpdateVaccinationDto
     public int PetId { get; init; }
     
     [Required]
+    public int VetId { get; init; }
+    
+    [Required]
     [MaxLength(200)]
     public string VaccineName { get; init; } = "";
     

@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.AppUsers;
 using PetHealth.Application.Common.DTOs.AppUserDto;
@@ -9,29 +11,35 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class AppUserController : ControllerBase
+[Authorize]
+
+public class AppUserController : Controller
 {
     private IAppUserRepository _appUserRepository;
+    private readonly ILogger _logger;
 
-    public AppUserController(IAppUserRepository appUserRepository)
+    public AppUserController(IAppUserRepository appUserRepository, ILogger<AppUserController> logger)
     {
         _appUserRepository = appUserRepository;
+        _logger = logger;
     }
 
     #region GET
-
+    
     [HttpGet]
+    [Authorize(Roles = "Admin, Vet")]
     public async Task<ActionResult<Result<IEnumerable<AppUserDto>>>> GetAllAppUserAsync()
     {
-        var appUsers = await _appUserRepository.Execute(new GetAllAppUserAsync());
+        Result<IEnumerable<AppUserDto>> appUsers = await _appUserRepository.Execute(new GetAllAppUserAsync());
         if (!appUsers.IsSuccess) return NotFound(appUsers.Error);
         return Ok(appUsers.Data);
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin, Vet")]
     public async Task<ActionResult<Result<AppUserDto>>> GetAppUserByIdAsync(int id)
     {
-        var appUser = await _appUserRepository.Execute(new GetAppUserByIdAsync(id));
+        Result<AppUserDto?> appUser = await _appUserRepository.Execute(new GetAppUserByIdAsync(id));
         if (!appUser.IsSuccess) return NotFound(appUser.Error);
         return Ok(appUser.Data);
     }
@@ -40,10 +48,15 @@ public class AppUserController : ControllerBase
 
     #region POST
 
+    //PEUT ÊTRE FAIRE UNE METHODE POUR AJOUTER UN VET POUR LES ADMINS ET VET EXISTANT
+    [Authorize(Roles = "Admin")]
     [HttpPost]
-    public async Task<ActionResult<Result<int>>> InsertAppUserAsync([FromBody] InsertAppUserDto appUser)
+    public async Task<ActionResult<Result<int>>> InsertVetAppUserAsync([FromBody] InsertVetAppUserDto vetAppUser)
     {
-        Result<int> id = await _appUserRepository.Execute(new InsertAppUserCommandAsync(appUser));
+        if (!ModelState.IsValid)
+            return new BadRequestObjectResult(ModelState);
+        
+        Result<int> id = await _appUserRepository.Execute(new InsertVetAppUserCommandAsync(vetAppUser));
         if (!id.IsSuccess) return BadRequest(id.Error);
 
         Result<AppUserDto?> appUserResult = await _appUserRepository.Execute(new GetAppUserByIdAsync(id.Data));
@@ -75,6 +88,7 @@ public class AppUserController : ControllerBase
         return Ok(result);
     }
 
+    
     [HttpPatch("password/")]
     public async Task<ActionResult<Result>> UpdatePasswordAppUserAsync([FromBody] UpdatePasswordAppUserDto passwordDto)
     {

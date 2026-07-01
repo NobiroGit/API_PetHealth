@@ -19,6 +19,11 @@ public static class DependencyInjectionExtensions
         services.AddScoped<IAppUserRoleRepository, AppUserRoleService>();
         services.AddScoped<IWeightRecordRepository, WeightRecordService>();
         services.AddScoped<IVaccinationRepository, VaccinationService>();
+        services.AddScoped<IMedicalDocumentRepository, MedicalDocumentService>();
+        services.AddScoped<ITreatmentRepository, TreatmentService>();
+        services.AddScoped<IAppointmentRepository, AppointmentService>();
+        services.AddScoped<IPrescriptionRepository, PrescriptionService>();
+        services.AddScoped<IPrescriptionItemRepository, PrescriptionService>();
         return services;
     }
 }

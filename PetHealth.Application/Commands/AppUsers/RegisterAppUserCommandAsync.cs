@@ -4,7 +4,7 @@ using PetHealth.Application.Common.Results;
 
 namespace PetHealth.Application.Commands.AppUsers;
 
-public class InsertAppUserCommandAsync: ICommandDefinitionAsync<Result<int>>
+public class RegisterAppUserCommandAsync: ICommandDefinitionAsync<Result>
 {
     public string LastName { get; init; }
     public string FirstName { get; init; }
@@ -13,7 +13,7 @@ public class InsertAppUserCommandAsync: ICommandDefinitionAsync<Result<int>>
     public string Phone { get; init; }
     public string Address { get; init; }
 
-    public InsertAppUserCommandAsync(InsertAppUserDto dto)
+    public RegisterAppUserCommandAsync(RegisterAppUserDto dto)
     {
         LastName = dto.LastName;
         FirstName = dto.FirstName;

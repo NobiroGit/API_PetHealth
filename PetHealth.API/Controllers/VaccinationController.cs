@@ -23,7 +23,7 @@ public class VaccinationController : Controller
     [HttpGet("{petId:int}")]
     public async Task<ActionResult<IEnumerable<VaccinationDto>>> GetVaccinationsByPetId(int petId)
     {
-        var vaccinations = await _vaccinationRepository.Execute(new GetVaccinationByPetIdQueryAsync(petId));
+        Result<IEnumerable<VaccinationDto>> vaccinations = await _vaccinationRepository.Execute(new GetVaccinationByPetIdQueryAsync(petId));
         if (!vaccinations.IsSuccess)
             return NotFound(vaccinations.Error);
         return Ok(vaccinations.Data);
@@ -36,7 +36,7 @@ public class VaccinationController : Controller
     [HttpPost]
     public async Task<ActionResult<Result>> InsertVaccination([FromBody] InsertVaccinationDto vaccinationDto)
     {
-        var result = await _vaccinationRepository.Execute(new InsertVaccinationCommandAsync(vaccinationDto));
+        Result result = await _vaccinationRepository.Execute(new InsertVaccinationCommandAsync(vaccinationDto));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);
     }
@@ -48,7 +48,7 @@ public class VaccinationController : Controller
     [HttpPut("{id:int}")]
     public async Task<ActionResult<Result>> UpdateVaccination([FromBody] UpdateVaccinationDto vaccinationDto, int id)
     {
-        var result = await _vaccinationRepository.Execute(new UpdateVaccinationCommandAsync(vaccinationDto, id));
+        Result result = await _vaccinationRepository.Execute(new UpdateVaccinationCommandAsync(vaccinationDto, id));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);   
     }
@@ -60,7 +60,7 @@ public class VaccinationController : Controller
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Result>> DeleteVaccination(int id)
     {
-        var result = await _vaccinationRepository.Execute(new DeleteVaccinationCommandAsync(id));
+        Result result = await _vaccinationRepository.Execute(new DeleteVaccinationCommandAsync(id));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);  
     }

@@ -3,7 +3,7 @@ using PetHealth.Domain.Entities;
 
 namespace PetHealth.Application.Common.Mapping;
 
-public static class AppUserDtoMapper
+public static class AppUserMapper
 {
     public static AppUserDto toAppUserDto(this AppUser app)
     {
@@ -16,6 +16,9 @@ public static class AppUserDtoMapper
             Phone = app.Phone,
             Address = app.Address,
             IsActive = app.IsActive,
+            Specialty = app.Specialty,
+            CreatedAt = app.CreatedAt
+            
         };
     }
     

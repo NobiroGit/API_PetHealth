@@ -8,6 +8,7 @@ public class UpdateVaccinationCommandAsync: ICommandDefinitionAsync<Result>
 {
     public int Id { get; init; }
     public int PetId { get; init; }
+    public int VetId { get; init; }
     public string VaccineName { get; init; }
     public DateOnly VaccinationDate { get; init; }
     public DateOnly? NextBoosterDate { get; init; }
@@ -17,6 +18,7 @@ public class UpdateVaccinationCommandAsync: ICommandDefinitionAsync<Result>
     {
         Id = id;
         PetId = dto.PetId;
+        VetId = dto.VetId;
         VaccineName = dto.VaccineName;
         VaccinationDate = dto.VaccinationDate;
         NextBoosterDate = dto.NextBoosterDate;
