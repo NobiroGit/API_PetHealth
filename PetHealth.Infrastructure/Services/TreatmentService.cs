@@ -37,6 +37,10 @@ public class TreatmentService : ITreatmentRepository
         {
             return Result<IEnumerable<Treatment>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<Treatment>>.Failure(new Error(e));
+        }
     }
 
     public async Task<Result<IEnumerable<Treatment>>> Execute(GetAllByUserTreatmentQueryAsync query)
@@ -52,6 +56,10 @@ public class TreatmentService : ITreatmentRepository
         {
             return Result<IEnumerable<Treatment>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<Treatment>>.Failure(new Error(e));
+        }   
     }
 
     #endregion
@@ -70,6 +78,10 @@ public class TreatmentService : ITreatmentRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }  
     }
 
     #endregion
@@ -88,6 +100,10 @@ public class TreatmentService : ITreatmentRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        } 
     }
 
     #endregion
@@ -105,6 +121,10 @@ public class TreatmentService : ITreatmentRepository
         catch (SqlException e)
         {
             return Result.Failure(Error.NotFound);
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

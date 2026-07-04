@@ -38,6 +38,10 @@ public class MedicalDocumentService : IMedicalDocumentRepository
         {
             return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e));
+        }
     }
 
     public async Task<Result<IEnumerable<MedicalDocument>>> Execute(GetAllByUserMedicalDocumentQueryAsync query)
@@ -52,6 +56,10 @@ public class MedicalDocumentService : IMedicalDocumentRepository
         catch (SqlException e)
         {
             return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e));
         }
     }
 
@@ -70,6 +78,10 @@ public class MedicalDocumentService : IMedicalDocumentRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e.Message));
         }
     }
 
@@ -91,7 +103,7 @@ public class MedicalDocumentService : IMedicalDocumentRepository
         }
         catch (Exception e)
         {
-            return Result.Failure(new Error(e.Message));
+            return Result.Failure(new Error(e));
         }
     }
 
@@ -110,6 +122,10 @@ public class MedicalDocumentService : IMedicalDocumentRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

@@ -1,4 +1,3 @@
-using System.Windows.Input;
 using PetHealth.Application.Commands.Appointment;
 using PetHealth.Application.Common.Cqs;
 using PetHealth.Application.Common.DTOs.AppointmentsDto;

@@ -1,5 +1,6 @@
 using System.Data;
 using Dapper;
+using Microsoft.Data.SqlClient;
 using PetHealth.Application.Common.Results;
 using PetHealth.Application.Queries.Medicines;
 using PetHealth.Application.Repositories;
@@ -24,11 +25,23 @@ public class MediceService : IMedicineRepository
 
     public async Task<Result<IEnumerable<Medicine>>> Execute(GetAllMedicineQueryAsync query)
     {
-        var medicines = (await _dbConnection.QueryAsync<Medicine>("Usp_Medicine_GetAll",
-            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
-        return medicines.Any()
-            ? Result<IEnumerable<Medicine>>.Success(medicines)
-            : Result<IEnumerable<Medicine>>.Failure(Error.NotFound);
+        try
+        {
+            var medicines = (await _dbConnection.QueryAsync<Medicine>("Usp_Medicine_GetAll",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+            return medicines.Any()
+                ? Result<IEnumerable<Medicine>>.Success(medicines)
+                : Result<IEnumerable<Medicine>>.Failure(Error.NotFound);
+
+        }
+        catch (SqlException e)
+        {
+            return Result<IEnumerable<Medicine>>.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<Medicine>>.Failure(new Error(e));
+        }
     }
 
     #endregion

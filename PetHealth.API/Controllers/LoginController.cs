@@ -54,7 +54,7 @@ public class LoginController : Controller
             issuer: _jwtSettings.Value.Issuer,
             audience: _jwtSettings.Value.Audience,
             claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
+            expires: DateTime.Now.AddMinutes(_jwtSettings.Value.ExpirationInMinutes),
             signingCredentials: scredentials
         );
 

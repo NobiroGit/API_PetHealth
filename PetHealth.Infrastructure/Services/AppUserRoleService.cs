@@ -40,6 +40,10 @@ public class AppUserRoleService : IAppUserRoleRepository
         {
             return Result<IEnumerable<AppUserRoleDto>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<AppUserRoleDto>>.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -58,6 +62,10 @@ public class AppUserRoleService : IAppUserRoleRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -75,6 +83,10 @@ public class AppUserRoleService : IAppUserRoleRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

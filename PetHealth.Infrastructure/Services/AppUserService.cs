@@ -125,6 +125,10 @@ public class AppUserService : IAppUserRepository
         {
             return Result<int>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<int>.Failure(new Error(e.Message));
+        }
     }
 
     #endregion
@@ -143,6 +147,10 @@ public class AppUserService : IAppUserRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e.Message));
         }
     }
 
@@ -163,6 +171,10 @@ public class AppUserService : IAppUserRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e.Message));
+        }
     }
 
     public async Task<Result> Execute(UpdatePasswordAppUserCommandAsync command)
@@ -177,6 +189,10 @@ public class AppUserService : IAppUserRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e.Message));
         }
     }
 
@@ -197,6 +213,10 @@ public class AppUserService : IAppUserRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e.Message));
         }
     }
 

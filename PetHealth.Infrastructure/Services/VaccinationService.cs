@@ -40,6 +40,10 @@ public class VaccinationService : IVaccinationRepository
         {
             return Result<IEnumerable<VaccinationDto>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<VaccinationDto>>.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -58,6 +62,10 @@ public class VaccinationService : IVaccinationRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        } 
     }
 
     #endregion
@@ -76,6 +84,10 @@ public class VaccinationService : IVaccinationRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -93,6 +105,10 @@ public class VaccinationService : IVaccinationRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

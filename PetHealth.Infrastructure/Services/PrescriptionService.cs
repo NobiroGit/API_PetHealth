@@ -147,6 +147,10 @@ public class PrescriptionService : IPrescriptionRepository, IPrescriptionItemRep
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     public async Task<Result> Execute(DeletePrescriptionItemCommandAsync command)
@@ -160,6 +164,10 @@ public class PrescriptionService : IPrescriptionRepository, IPrescriptionItemRep
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

@@ -40,6 +40,10 @@ public class WeightRecordService : IWeightRecordRepository
         {
             return Result<IEnumerable<WeightRecordDto>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<WeightRecordDto>>.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -54,12 +58,16 @@ public class WeightRecordService : IWeightRecordRepository
             parameters.Add("@WeightKg", command.WeightKg, DbType.Decimal, precision: 6, scale: 3);
 
             int rows = await _dbConnection.ExecuteAsync("Usp_WeightRecord_Insert",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(parameters));
             return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
         }
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 
@@ -79,6 +87,10 @@ public class WeightRecordService : IWeightRecordRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -96,6 +108,10 @@ public class WeightRecordService : IWeightRecordRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

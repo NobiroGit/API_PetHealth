@@ -13,6 +13,9 @@ public record Error(string Code, string Message)
     /// <returns>Error</returns>
     public Error(string sqlExtension): this("SqlException", sqlExtension)
     {
-        
+    }
+
+    public Error(Exception ex): this("Exception", ex.Message)
+    {
     }
 }

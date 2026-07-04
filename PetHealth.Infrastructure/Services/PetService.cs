@@ -40,6 +40,10 @@ public class PetService : IPetRepository
         {
             return Result<IEnumerable<PetDto>>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<PetDto>>.Failure(new Error(e));
+        }
     }
 
     public async Task<Result<PetDto?>> Execute(GetPetByIdQueryAsync query)
@@ -57,6 +61,10 @@ public class PetService : IPetRepository
         catch (SqlException e)
         {
             return Result<PetDto?>.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result<PetDto?>.Failure(new Error(e));
         }
     }
 
@@ -85,6 +93,10 @@ public class PetService : IPetRepository
         {
             return Result<int>.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result<int>.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -103,6 +115,10 @@ public class PetService : IPetRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 
@@ -123,6 +139,10 @@ public class PetService : IPetRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -141,6 +161,10 @@ public class PetService : IPetRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 

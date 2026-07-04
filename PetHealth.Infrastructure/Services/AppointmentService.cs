@@ -3,9 +3,11 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using PetHealth.Application.Commands.Appointment;
 using PetHealth.Application.Common.DTOs.AppointmentsDto;
+using PetHealth.Application.Common.Mapping;
 using PetHealth.Application.Common.Results;
 using PetHealth.Application.Queries.Appointment;
 using PetHealth.Application.Repositories;
+using PetHealth.Domain.Entities;
 using PetHealth.Infrastructure.Extensions;
 
 namespace PetHealth.Infrastructure.Services;
@@ -28,14 +30,18 @@ public class AppointmentService : IAppointmentRepository
     {
         try
         {
-            var appointments = (await _dbConnection.QueryAsync<AppointmentDto>("Usp_Appointment_GetAll",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+            var appointments = (await _dbConnection.QueryAsync<Appointment>("Usp_Appointment_GetAll",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).Select(i => i.MapToDto()).ToList();
             if (!appointments.Any()) return Result<IEnumerable<AppointmentDto>>.Failure(Error.NotFound);
             return Result<IEnumerable<AppointmentDto>>.Success(appointments);
         }
         catch (SqlException e)
         {
             return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e));
         }
     }
 
@@ -43,8 +49,8 @@ public class AppointmentService : IAppointmentRepository
     {
         try
         {
-            var appointments = (await _dbConnection.QueryAsync<AppointmentDto>("usp_Appointment_GetByPetId",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+            var appointments = (await _dbConnection.QueryAsync<Appointment>("usp_Appointment_GetByPetId",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).Select(i => i.MapToDto()).ToList();
             if (!appointments.Any()) return Result<IEnumerable<AppointmentDto>>.Failure(Error.NotFound);
             
             return Result<IEnumerable<AppointmentDto>>.Success(appointments);
@@ -52,6 +58,10 @@ public class AppointmentService : IAppointmentRepository
         catch (SqlException e)
         {
             return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e));
         }
     }
 
@@ -71,6 +81,10 @@ public class AppointmentService : IAppointmentRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -89,6 +103,10 @@ public class AppointmentService : IAppointmentRepository
         {
             return Result.Failure(new Error(e.ToError()));
         }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
+        }
     }
 
     #endregion
@@ -106,6 +124,10 @@ public class AppointmentService : IAppointmentRepository
         catch (SqlException e)
         {
             return Result.Failure(new Error(e.ToError()));
+        }
+        catch (Exception e)
+        {
+            return Result.Failure(new Error(e));
         }
     }
 
