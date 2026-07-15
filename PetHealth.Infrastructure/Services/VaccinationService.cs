@@ -1,6 +1,5 @@
 using System.Data;
 using Dapper;
-using Microsoft.Data.SqlClient;
 using PetHealth.Application.Commands.Vaccinations;
 using PetHealth.Application.Common.DTOs.VaccinationDto;
 using PetHealth.Application.Common.Mapping;
@@ -28,22 +27,11 @@ public class VaccinationService : IVaccinationRepository
 
     public async Task<Result<IEnumerable<VaccinationDto>>> Execute(GetVaccinationByPetIdQueryAsync query)
     {
-        try
-        {
-            var vaccinations = (await _dbConnection.QueryAsync<Vaccination>("Usp_Vaccination_GetByPetId",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
-            if (!vaccinations.Any())
-                return Result<IEnumerable<VaccinationDto>>.Failure(Error.NotFound);
-            return Result<IEnumerable<VaccinationDto>>.Success(vaccinations.Select(i => i.ToVaccinationDto()));
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<VaccinationDto>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<VaccinationDto>>.Failure(new Error(e));
-        }
+        var vaccinations = (await _dbConnection.QueryAsync<Vaccination>("Usp_Vaccination_GetByPetId",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        if (!vaccinations.Any())
+            return Result<IEnumerable<VaccinationDto>>.Failure(Error.NotFound);
+        return Result<IEnumerable<VaccinationDto>>.Success(vaccinations.Select(i => i.ToVaccinationDto()));
     }
 
     #endregion
@@ -52,20 +40,9 @@ public class VaccinationService : IVaccinationRepository
 
     public async Task<Result> Execute(InsertVaccinationCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Vaccination_Insert",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        } 
+        int rows = await _dbConnection.ExecuteAsync("Usp_Vaccination_Insert",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -74,20 +51,9 @@ public class VaccinationService : IVaccinationRepository
 
     public async Task<Result> Execute(UpdateVaccinationCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Vaccination_Update",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_Vaccination_Update",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -96,20 +62,9 @@ public class VaccinationService : IVaccinationRepository
 
     public async Task<Result> Execute(DeleteVaccinationCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Vaccination_Delete",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_Vaccination_Delete",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion

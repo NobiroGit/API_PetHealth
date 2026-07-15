@@ -1,6 +1,5 @@
 using System.Data;
 using Dapper;
-using Microsoft.Data.SqlClient;
 using PetHealth.Application.Commands.Treatments;
 using PetHealth.Application.Common.Results;
 using PetHealth.Application.Queries.Treatments;
@@ -26,40 +25,18 @@ public class TreatmentService : ITreatmentRepository
 
     public async Task<Result<IEnumerable<Treatment>>> Execute(GetAllTreatmentQueryAsync query)
     {
-        try
-        {
-            var treatments = (await _dbConnection.QueryAsync<Treatment>("Usp_Treatment_GetAll",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
-            if (!treatments.Any()) return Result<IEnumerable<Treatment>>.Failure(Error.NotFound);
-            return Result<IEnumerable<Treatment>>.Success(treatments);
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<Treatment>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<Treatment>>.Failure(new Error(e));
-        }
+        var treatments = (await _dbConnection.QueryAsync<Treatment>("Usp_Treatment_GetAll",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        if (!treatments.Any()) return Result<IEnumerable<Treatment>>.Failure(Error.NotFound);
+        return Result<IEnumerable<Treatment>>.Success(treatments);
     }
 
     public async Task<Result<IEnumerable<Treatment>>> Execute(GetAllByUserTreatmentQueryAsync query)
     {
-        try
-        {
-            var treatments = (await _dbConnection.QueryAsync<Treatment>("Usp_Treatment_GetAllByUser",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
-            if (!treatments.Any()) return Result<IEnumerable<Treatment>>.Failure(Error.NotFound);
-            return Result<IEnumerable<Treatment>>.Success(treatments);
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<Treatment>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<Treatment>>.Failure(new Error(e));
-        }   
+        var treatments = (await _dbConnection.QueryAsync<Treatment>("Usp_Treatment_GetAllByUser",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        if (!treatments.Any()) return Result<IEnumerable<Treatment>>.Failure(Error.NotFound);
+        return Result<IEnumerable<Treatment>>.Success(treatments);
     }
 
     #endregion
@@ -68,20 +45,9 @@ public class TreatmentService : ITreatmentRepository
 
     public async Task<Result> Execute(InsertTreatmentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Insert",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }  
+        int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Insert",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -90,20 +56,9 @@ public class TreatmentService : ITreatmentRepository
 
     public async Task<Result> Execute(UpdateTreatmentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Update",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        } 
+        int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Update",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -112,20 +67,9 @@ public class TreatmentService : ITreatmentRepository
 
     public async Task<Result> Execute(DeleteTreatmentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Delete",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(Error.NotFound);
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Delete",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion

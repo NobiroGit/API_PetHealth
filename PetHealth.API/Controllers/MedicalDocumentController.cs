@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.MedicalDocuments;
 using PetHealth.Application.Common.DTOs.MedicalDocumentDto;
@@ -10,6 +11,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class MedicalDocumentController : Controller
 {
     private readonly IMedicalDocumentRepository _medicalDocumentRepository;
@@ -20,7 +22,7 @@ public class MedicalDocumentController : Controller
     }
 
     #region GET
-
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet]
     public async Task<ActionResult<Result<IEnumerable<MedicalDocument>>>> GetAllMedicalDocuments()
     {
@@ -33,7 +35,7 @@ public class MedicalDocumentController : Controller
     #endregion
 
     #region POST
-
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPost]
     public async Task<ActionResult<Result>> InsertMedicalDocuments([FromBody] InsertMedicalDocumentDto dto)
     {
@@ -45,7 +47,7 @@ public class MedicalDocumentController : Controller
     #endregion
 
     #region PUT
-
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPut]
     public async Task<ActionResult<Result>> UpdateMedicalDocument([FromBody] UpdateMedicalDocumentDto dto)
     {
@@ -57,7 +59,7 @@ public class MedicalDocumentController : Controller
     #endregion
 
     #region DELETE
-
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{medicalDocId}")]
     public async Task<ActionResult<Result>> DeletaMedicalDocument(int medicalDocId)
     {

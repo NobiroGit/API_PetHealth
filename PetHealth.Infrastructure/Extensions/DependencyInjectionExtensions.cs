@@ -15,7 +15,7 @@ public static class DependencyInjectionExtensions
         services.AddScoped<IDbConnection>(_ => new SqlConnection(connectionString));
         services.AddScoped<IPetRepository, PetService>();
         services.AddScoped<IAppUserRepository, AppUserService>();
-        services.AddScoped<ICurrentUserRepository, FakeCurrentUserRepository>();
+        services.AddScoped<ICurrentUserRepository, CurrentUserRepository>();
         services.AddScoped<IAppUserRoleRepository, AppUserRoleService>();
         services.AddScoped<IWeightRecordRepository, WeightRecordService>();
         services.AddScoped<IVaccinationRepository, VaccinationService>();

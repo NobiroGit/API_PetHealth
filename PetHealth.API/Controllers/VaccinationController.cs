@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.Vaccinations;
 using PetHealth.Application.Common.DTOs.VaccinationDto;
@@ -9,6 +10,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class VaccinationController : Controller
 {
     private readonly IVaccinationRepository _vaccinationRepository;
@@ -20,10 +22,12 @@ public class VaccinationController : Controller
 
     #region GET
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet("{petId:int}")]
     public async Task<ActionResult<IEnumerable<VaccinationDto>>> GetVaccinationsByPetId(int petId)
     {
-        Result<IEnumerable<VaccinationDto>> vaccinations = await _vaccinationRepository.Execute(new GetVaccinationByPetIdQueryAsync(petId));
+        Result<IEnumerable<VaccinationDto>> vaccinations =
+            await _vaccinationRepository.Execute(new GetVaccinationByPetIdQueryAsync(petId));
         if (!vaccinations.IsSuccess)
             return NotFound(vaccinations.Error);
         return Ok(vaccinations.Data);
@@ -33,6 +37,7 @@ public class VaccinationController : Controller
 
     #region POST
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPost]
     public async Task<ActionResult<Result>> InsertVaccination([FromBody] InsertVaccinationDto vaccinationDto)
     {
@@ -42,28 +47,30 @@ public class VaccinationController : Controller
     }
 
     #endregion
-    
+
     #region PUT
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPut("{id:int}")]
     public async Task<ActionResult<Result>> UpdateVaccination([FromBody] UpdateVaccinationDto vaccinationDto, int id)
     {
         Result result = await _vaccinationRepository.Execute(new UpdateVaccinationCommandAsync(vaccinationDto, id));
         if (!result.IsSuccess) return BadRequest(result.Error);
-        return Ok(result);   
+        return Ok(result);
     }
-    
+
     #endregion
-    
+
     #region DELETE
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Result>> DeleteVaccination(int id)
     {
         Result result = await _vaccinationRepository.Execute(new DeleteVaccinationCommandAsync(id));
         if (!result.IsSuccess) return BadRequest(result.Error);
-        return Ok(result);  
+        return Ok(result);
     }
-    
+
     #endregion
 }

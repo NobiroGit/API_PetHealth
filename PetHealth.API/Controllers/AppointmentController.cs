@@ -10,9 +10,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-
-[Authorize(Roles = "Admin, Vet")]
-
+[Authorize]
 public class AppointmentController : Controller
 {
     private readonly IAppointmentRepository _appointmentRepository;
@@ -24,18 +22,22 @@ public class AppointmentController : Controller
 
     #region GET
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet]
     public async Task<ActionResult<Result<IEnumerable<AppointmentDto>>>> GetAllAppointments()
     {
-        Result<IEnumerable<AppointmentDto>> result = await _appointmentRepository.Execute(new GetAllAppointmentQueryAsync());
+        Result<IEnumerable<AppointmentDto>> result =
+            await _appointmentRepository.Execute(new GetAllAppointmentQueryAsync());
         if (!result.IsSuccess) return NotFound(result.Error);
         return Ok(result.Data);
     }
 
+    [Authorize]
     [HttpGet("{petId:int}")]
     public async Task<ActionResult<Result<IEnumerable<AppointmentDto>>>> GetAppointmentsByPetId(int petId)
     {
-        Result<IEnumerable<AppointmentDto>> result = await _appointmentRepository.Execute(new GetByPetIdAppointmentQueryAsync(petId));
+        Result<IEnumerable<AppointmentDto>> result =
+            await _appointmentRepository.Execute(new GetByPetIdAppointmentQueryAsync(petId));
         if (!result.IsSuccess) return NotFound(result.Error);
         return Ok(result.Data);
     }
@@ -44,6 +46,7 @@ public class AppointmentController : Controller
 
     #region POST
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPost]
     public async Task<ActionResult<Result>> InsertAppointment([FromBody] InsertAppointmentDto appointmentDto)
     {
@@ -56,6 +59,7 @@ public class AppointmentController : Controller
 
     #region PUT
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPut("{id:int}")]
     public async Task<ActionResult<Result>> UpdateAppointment([FromBody] UpdateAppointmentDto appointmentDto, int id)
     {
@@ -68,6 +72,7 @@ public class AppointmentController : Controller
 
     #region DELETE
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Result>> DeleteAppointment(int id)
     {

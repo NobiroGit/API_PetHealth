@@ -1,6 +1,5 @@
 using System.Data;
 using Dapper;
-using Microsoft.Data.SqlClient;
 using PetHealth.Application.Commands.MedicalDocuments;
 using PetHealth.Application.Common.Results;
 using PetHealth.Application.Queries.MedicalDocuments;
@@ -26,41 +25,19 @@ public class MedicalDocumentService : IMedicalDocumentRepository
 
     public async Task<Result<IEnumerable<MedicalDocument>>> Execute(GetAllMedicalDocumentQueryAsync query)
     {
-        try
-        {
-            var medicalDocuments = (await _dbConnection.QueryAsync<MedicalDocument>("Usp_MedicalDocument_GetAll",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        var medicalDocuments = (await _dbConnection.QueryAsync<MedicalDocument>("Usp_MedicalDocument_GetAll",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
 
-            if (!medicalDocuments.Any()) return Result<IEnumerable<MedicalDocument>>.Failure(Error.NotFound);
-            return Result<IEnumerable<MedicalDocument>>.Success(medicalDocuments);
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e));
-        }
+        if (!medicalDocuments.Any()) return Result<IEnumerable<MedicalDocument>>.Failure(Error.NotFound);
+        return Result<IEnumerable<MedicalDocument>>.Success(medicalDocuments);
     }
 
     public async Task<Result<IEnumerable<MedicalDocument>>> Execute(GetAllByUserMedicalDocumentQueryAsync query)
     {
-        try
-        {
-            var medicalDocuments = (await _dbConnection.QueryAsync<MedicalDocument>("Usp_MedicalDocument_GetAllByUser",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
-            if (!medicalDocuments.Any()) return Result<IEnumerable<MedicalDocument>>.Failure(Error.NotFound);
-            return Result<IEnumerable<MedicalDocument>>.Success(medicalDocuments);
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<MedicalDocument>>.Failure(new Error(e));
-        }
+        var medicalDocuments = (await _dbConnection.QueryAsync<MedicalDocument>("Usp_MedicalDocument_GetAllByUser",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        if (!medicalDocuments.Any()) return Result<IEnumerable<MedicalDocument>>.Failure(Error.NotFound);
+        return Result<IEnumerable<MedicalDocument>>.Success(medicalDocuments);
     }
 
     #endregion
@@ -69,20 +46,9 @@ public class MedicalDocumentService : IMedicalDocumentRepository
 
     public async Task<Result> Execute(InsertMedicalDocumentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_MedicalDocument_Insert",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e.Message));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_MedicalDocument_Insert",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -91,20 +57,9 @@ public class MedicalDocumentService : IMedicalDocumentRepository
 
     public async Task<Result> Execute(UpdateMedicalDocumentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_MedicalDocument_Update",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_MedicalDocument_Update",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -113,20 +68,9 @@ public class MedicalDocumentService : IMedicalDocumentRepository
 
     public async Task<Result> Execute(DeleteMedicalDocumentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_MedicalDocument_Delete",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_MedicalDocument_Delete",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion

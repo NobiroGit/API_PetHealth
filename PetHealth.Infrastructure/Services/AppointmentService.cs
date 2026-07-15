@@ -1,6 +1,5 @@
 using System.Data;
 using Dapper;
-using Microsoft.Data.SqlClient;
 using PetHealth.Application.Commands.Appointment;
 using PetHealth.Application.Common.DTOs.AppointmentsDto;
 using PetHealth.Application.Common.Mapping;
@@ -28,41 +27,21 @@ public class AppointmentService : IAppointmentRepository
 
     public async Task<Result<IEnumerable<AppointmentDto>>> Execute(GetAllAppointmentQueryAsync query)
     {
-        try
-        {
-            var appointments = (await _dbConnection.QueryAsync<Appointment>("Usp_Appointment_GetAll",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).Select(i => i.MapToDto()).ToList();
-            if (!appointments.Any()) return Result<IEnumerable<AppointmentDto>>.Failure(Error.NotFound);
-            return Result<IEnumerable<AppointmentDto>>.Success(appointments);
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e));
-        }
+        var appointments = (await _dbConnection.QueryAsync<Appointment>("Usp_Appointment_GetAll",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query)))
+            .Select(i => i.MapToDto()).ToList();
+        if (!appointments.Any()) return Result<IEnumerable<AppointmentDto>>.Failure(Error.NotFound);
+        return Result<IEnumerable<AppointmentDto>>.Success(appointments);
     }
 
     public async Task<Result<IEnumerable<AppointmentDto>>> Execute(GetByPetIdAppointmentQueryAsync query)
     {
-        try
-        {
-            var appointments = (await _dbConnection.QueryAsync<Appointment>("usp_Appointment_GetByPetId",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).Select(i => i.MapToDto()).ToList();
-            if (!appointments.Any()) return Result<IEnumerable<AppointmentDto>>.Failure(Error.NotFound);
-            
-            return Result<IEnumerable<AppointmentDto>>.Success(appointments);
-        }
-        catch (SqlException e)
-        {
-            return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result<IEnumerable<AppointmentDto>>.Failure(new Error(e));
-        }
+        var appointments = (await _dbConnection.QueryAsync<Appointment>("usp_Appointment_GetByPetId",
+                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query)))
+            .Select(i => i.MapToDto()).ToList();
+        if (!appointments.Any()) return Result<IEnumerable<AppointmentDto>>.Failure(Error.NotFound);
+
+        return Result<IEnumerable<AppointmentDto>>.Success(appointments);
     }
 
     #endregion
@@ -71,20 +50,9 @@ public class AppointmentService : IAppointmentRepository
 
     public async Task<Result> Execute(InsertAppointmentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Appointment_Insert",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_Appointment_Insert",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -93,20 +61,9 @@ public class AppointmentService : IAppointmentRepository
 
     public async Task<Result> Execute(UpdateAppointmentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Appointment_Update",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_Appointment_Update",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion
@@ -115,20 +72,9 @@ public class AppointmentService : IAppointmentRepository
 
     public async Task<Result> Execute(DeleteAppointmentCommandAsync command)
     {
-        try
-        {
-            int rows = await _dbConnection.ExecuteAsync("Usp_Appointment_Delete",
-                commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
-            return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
-        }
-        catch (SqlException e)
-        {
-            return Result.Failure(new Error(e.ToError()));
-        }
-        catch (Exception e)
-        {
-            return Result.Failure(new Error(e));
-        }
+        int rows = await _dbConnection.ExecuteAsync("Usp_Appointment_Delete",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
     #endregion

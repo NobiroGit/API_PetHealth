@@ -16,12 +16,10 @@ namespace API_PetHealth.Controllers;
 public class AppUserController : Controller
 {
     private IAppUserRepository _appUserRepository;
-    private readonly ILogger _logger;
 
     public AppUserController(IAppUserRepository appUserRepository, ILogger<AppUserController> logger)
     {
         _appUserRepository = appUserRepository;
-        _logger = logger;
     }
 
     #region GET
@@ -67,6 +65,7 @@ public class AppUserController : Controller
 
     #region PUT
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("{id}")]
     public async Task<ActionResult<Result>> UpdateAppUserAsync([FromBody] UpdateAppUserDto appUser, int id)
     {
@@ -79,7 +78,7 @@ public class AppUserController : Controller
     #endregion
 
     #region PATCH
-
+    [Authorize]
     [HttpPatch("email/")]
     public async Task<ActionResult<Result>> UpdateEmailAppUserAsync([FromBody] UpdateEmailAppUserDto emailDto)
     {
@@ -88,7 +87,7 @@ public class AppUserController : Controller
         return Ok(result);
     }
 
-    
+    [Authorize]
     [HttpPatch("password/")]
     public async Task<ActionResult<Result>> UpdatePasswordAppUserAsync([FromBody] UpdatePasswordAppUserDto passwordDto)
     {
@@ -101,6 +100,7 @@ public class AppUserController : Controller
 
     #region DELETE
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id}")]
     public async Task<ActionResult<Result>> DeleteAppUserAsync(int id)
     {

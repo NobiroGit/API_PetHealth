@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -45,6 +46,7 @@ public class LoginController : Controller
         {
             new Claim(JwtRegisteredClaimNames.Sub, result.Data.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Name, result.Data.FirstName),
+            new Claim(JwtRegisteredClaimNames.Email, result.Data.Email),
             new Claim("Role", result.Data.Role)
         };
 
@@ -71,5 +73,13 @@ public class LoginController : Controller
             return BadRequest(result.Error);
 
         return Ok(result);
+    }
+    
+    //Ajouter le logout
+    [Authorize]
+    [HttpPost("Logout")]
+    public async Task<ActionResult> LogoutAsync()
+    {
+        return Ok();
     }
 }

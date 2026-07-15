@@ -3,7 +3,6 @@ using PetHealth.Application.Common.Results;
 using PetHealth.Application.Commands.AppUsers;
 using PetHealth.Application.Common.DTOs.AppUserDto;
 using PetHealth.Application.Queries.AppUsers;
-using PetHealth.Domain.Entities;
 
 namespace PetHealth.Application.Repositories;
 

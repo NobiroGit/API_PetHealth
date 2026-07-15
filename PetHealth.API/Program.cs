@@ -1,3 +1,5 @@
+using System.IdentityModel.Tokens.Jwt;
+using API_PetHealth.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using PetHealth.Application.Security;
@@ -9,6 +11,11 @@ using Serilog.Sinks.SystemConsole.Themes;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
+builder.Services.AddHttpContextAccessor();
+
 #region JWT
 
 //Configuration de JwtSettings
@@ -17,18 +24,22 @@ builder.Services.Configure<JwtSettings>(
 
 //Ajouter l'authentification Jwt
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters
+    .AddJwtBearer(options =>
     {
-        ValidateIssuer = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidateAudience = true,
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(
-            System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ??
-                                               throw new ArgumentNullException())),
-        RoleClaimType = "Role"
+        options.MapInboundClaims = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ??
+                                                   throw new ArgumentNullException())),
+            RoleClaimType = "Role"
+        };
     });
 
 #endregion
@@ -45,8 +56,8 @@ Log.Logger = new LoggerConfiguration()
     .Enrich.WithProperty("AppEnv", builder.Environment.EnvironmentName)
     //Sinks - Destinations (Nuget Serilog.Sinks.File)
     .WriteTo.File(
-        path: @"logs/application.log",
-        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}[{Level:u3}] - {Message:lj}{NewLine}{Exception}",
+        path: "logs/application.log",
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}[{Level:u3}] - {Message:lj} {Properties:j}{NewLine}{Exception}",
         rollingInterval: RollingInterval.Day,
         retainedFileCountLimit: 10,
         rollOnFileSizeLimit: true,
@@ -54,15 +65,18 @@ Log.Logger = new LoggerConfiguration()
         restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information
     )
     .WriteTo.File(
-        path: @"logs\Fatal-application.log",
-        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}[{Level:u3}] - {Message:lj}{NewLine}{Exception}",
+        path: "logs/Fatal-application.log",
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}[{Level:u3}] - {Message:lj} {Properties:j}{NewLine}{Exception}",
         rollingInterval: RollingInterval.Day,
         retainedFileCountLimit: 10,
         rollOnFileSizeLimit: true,
         fileSizeLimitBytes: 40 * 1024 * 1024,
         restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Fatal
     )
-    .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+    .WriteTo.Console(
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}[{Level:u3}] - {Message:lj} {Properties:j}{NewLine}{Exception}",
+        theme: AnsiConsoleTheme.Code
+    )
     .CreateLogger();
 //Remplacer le logger microsoft par mon serilog (Nuget : SeriLog.AspNetCore)
 builder.Host.UseSerilog();
@@ -82,6 +96,16 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.UseSerilogRequestLogging(options =>
+{
+    options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+    {
+        diagnosticContext.Set("UserId", httpContext.User?.FindFirst(JwtRegisteredClaimNames.Sub)?.Value ?? "Anonymous");
+        diagnosticContext.Set("RemoteIP", httpContext.Connection.RemoteIpAddress?.ToString());
+    };
+});
+app.UseExceptionHandler();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -90,9 +114,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 Log.Information("Application started");

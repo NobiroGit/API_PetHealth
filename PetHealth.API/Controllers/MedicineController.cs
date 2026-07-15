@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Common.Results;
 using PetHealth.Application.Queries.Medicines;
@@ -8,6 +9,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Roles = "Admin, Vet")]
 public class MedicineController : Controller
 {
     private readonly IMedicineRepository _medicineRepository;

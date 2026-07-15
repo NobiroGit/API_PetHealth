@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.WeightRecords;
 using PetHealth.Application.Common.DTOs.WeightRecordDto;
@@ -9,6 +10,7 @@ namespace API_PetHealth.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 
 public class WeightRecordController : Controller
 {
@@ -58,6 +60,7 @@ public class WeightRecordController : Controller
     
     #region DELETE
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Result>> DeleteWeightRecordAsync(int id)
     {

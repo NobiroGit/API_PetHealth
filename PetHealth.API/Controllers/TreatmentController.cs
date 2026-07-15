@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.Treatments;
 using PetHealth.Application.Common.DTOs.TreatmentDto;
@@ -10,6 +11,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class TreatmentController : Controller
 {
     private readonly ITreatmentRepository _treatmentRepository;
@@ -21,6 +23,7 @@ public class TreatmentController : Controller
 
     #region GET
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet]
     public async Task<ActionResult<Result<IEnumerable<Treatment>>>> GetAllTreatments()
     {
@@ -29,7 +32,8 @@ public class TreatmentController : Controller
         return Ok(treatments.Data);
     }
 
-    [HttpGet]
+    [Authorize]
+    [HttpGet("User")]
     public async Task<ActionResult<Result<IEnumerable<Treatment>>>> GetAllTreatmentsByUser(DateTime date)
     {
         Result<IEnumerable<Treatment>> treatments =
@@ -42,6 +46,7 @@ public class TreatmentController : Controller
 
     #region POST
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPost]
     public async Task<ActionResult<Result>> InsertTreatment([FromBody] InsertTreatmentDto dto)
     {
@@ -55,6 +60,7 @@ public class TreatmentController : Controller
 
     #region PUT
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPut]
     public async Task<ActionResult<Result>> UpdateTreatment([FromBody] UpdateTreatmentDto dto)
     {
@@ -68,6 +74,7 @@ public class TreatmentController : Controller
 
     #region DELETE
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{treatmentId}")]
     public async Task<ActionResult<Result>> DeleteTreatment(int treatmentId)
     {

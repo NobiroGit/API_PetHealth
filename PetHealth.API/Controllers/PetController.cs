@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Common.DTOs.PetsDto;
 using PetHealth.Application.Common.Results;
@@ -9,6 +10,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 
 public class PetController : ControllerBase
 {
@@ -22,6 +24,7 @@ public class PetController : ControllerBase
     #region GET
 
     // GET
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PetDto>>> GetAllPetsAsync()
     {
@@ -30,7 +33,8 @@ public class PetController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, pets.Error);
         return Ok(pets.Data);
     }
-
+    
+    [Authorize]
     [HttpGet("{id}")]
     public async Task<ActionResult<PetDto>> GetPetByIdAsync(int id)
     {
@@ -44,7 +48,7 @@ public class PetController : ControllerBase
     #endregion
 
     #region POST
-
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPost]
     public async Task<ActionResult<int>> InsertPetAsync([FromBody] InsertPetDto petDto)
     {
@@ -61,7 +65,7 @@ public class PetController : ControllerBase
     #endregion
 
     #region DELETE
-
+    [Authorize(Roles = "Admin, Vet")]
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeletePetAsync(int id)
     {
@@ -78,7 +82,7 @@ public class PetController : ControllerBase
     #endregion
 
     #region PATCH
-
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPut("{id}")]
     public async Task<ActionResult<Result>> UpdatePetAdminAsync([FromBody] UpdatePetAdminDto adminDto, int id)
     {
@@ -94,6 +98,7 @@ public class PetController : ControllerBase
         return Ok(updated);
     }
 
+    [Authorize]
     [HttpPatch("{id}")]
     public async Task<ActionResult<Result>> UpdatePetPseudoAsync([FromBody] UpdatePetPseudoDto pseudoDto, int id)
     {

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetHealth.Application.Commands.Prescriptions;
 using PetHealth.Application.Commands.PrescriptionsItem;
@@ -13,6 +14,7 @@ namespace API_PetHealth.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class PrescriptionController : Controller
 {
     private readonly IPrescriptionRepository _prescriptionRepository;
@@ -27,6 +29,7 @@ public class PrescriptionController : Controller
 
     #region GET
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet]
     public async Task<ActionResult<Result<IEnumerable<Prescription>>>> GetAllPrescriptions()
     {
@@ -36,6 +39,7 @@ public class PrescriptionController : Controller
         return Ok(result.Data);
     }
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpGet("{id}")]
     public async Task<ActionResult<Result<IEnumerable<Prescription>>>> GetPrescriptionById(int id)
     {
@@ -45,7 +49,8 @@ public class PrescriptionController : Controller
         return Ok(result.Data);
     }
 
-    [HttpGet]
+    [Authorize(Roles = "Admin, Vet")]
+    [HttpGet("Item")]
     public async Task<ActionResult<Result<IEnumerable<PrescriptionItem>>>> GetAllPrescriptionItems()
     {
         Result<IEnumerable<PrescriptionItem>> result =
@@ -54,7 +59,8 @@ public class PrescriptionController : Controller
         return Ok(result.Data);
     }
 
-    [HttpGet]
+    [Authorize(Roles = "Admin, Vet")]
+    [HttpGet("Item/{prescriptionId}")]
     public async Task<ActionResult<Result<IEnumerable<PrescriptionItem>>>> GetPrescriptionItemsByPrescriptionId(
         int prescriptionId)
     {
@@ -68,6 +74,7 @@ public class PrescriptionController : Controller
 
     #region POST
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPost]
     public async Task<ActionResult<Result<int>>> InsertPrescription([FromBody] InsertPrescriptionDto prescriptionDto)
     {
@@ -76,7 +83,8 @@ public class PrescriptionController : Controller
         return Ok(result);
     }
 
-    [HttpPost]
+    [Authorize(Roles = "Admin, Vet")]
+    [HttpPost("Item")]
     public async Task<ActionResult<Result>> InsertPrescriptionItem(
         [FromBody] InsertPrescriptionItemDto prescriptionItemDto)
     {
@@ -90,6 +98,7 @@ public class PrescriptionController : Controller
 
     #region PUT
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpPut]
     public async Task<ActionResult<Result>> UpdatePrescriptionItem(
         [FromBody] UpdatePrescriptionItemDto prescriptionItemDto)
@@ -104,6 +113,7 @@ public class PrescriptionController : Controller
 
     #region DELETE
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpDelete("{id}")]
     public async Task<ActionResult<Result>> DeletePrescription(int id)
     {
@@ -112,6 +122,7 @@ public class PrescriptionController : Controller
         return Ok(result);
     }
 
+    [Authorize(Roles = "Admin, Vet")]
     [HttpDelete("Item/{id}")]
     public async Task<ActionResult<Result>> DeletePrescriptionItem(int id)
     {
