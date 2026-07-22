@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using API_PetHealth.Middlewares;
+using API_PetHealth.ScalarExtension;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using PetHealth.Application.Security;
@@ -15,6 +16,22 @@ builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 
 builder.Services.AddHttpContextAccessor();
+
+#region CORS
+
+const string angularPolicy = "AngularClient";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(angularPolicy, policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        // pas de AllowCredentials() ici, le token passe dans le header, pas en cookie
+    });
+});
+
+#endregion
 
 #region JWT
 
@@ -87,14 +104,25 @@ builder.Host.UseSerilog();
 string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbConnection(connection ?? throw new ArgumentNullException());
 
+
 builder.Services.AddControllers(options => { options.SuppressAsyncSuffixInActionNames = false; });
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    //Ajoute la section pour injecter le token dans les headers 
+    options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+});
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+
+app.UseCors(angularPolicy);
+app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.UseSerilogRequestLogging(options =>
 {
