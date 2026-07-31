@@ -11,4 +11,6 @@ public class AppointmentDto
     public string? Notes { get; init; }
     public decimal? Cost { get; init; }
     public string Status { get; init; }= string.Empty;
+    public string? VetFirstName { get; init; }
+    public string? VetLastName { get; init; }
 }

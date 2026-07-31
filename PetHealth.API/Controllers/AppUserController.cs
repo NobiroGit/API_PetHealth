@@ -23,6 +23,14 @@ public class AppUserController : Controller
     }
 
     #region GET
+
+    [HttpGet("me")]
+    public async Task<ActionResult<Result<AppUserDto>>> GetMeAsync()
+    {
+        Result<AppUserDto> result = await _appUserRepository.Execute(new GetAppUserByJwtAsync());
+        if (!result.IsSuccess) return NotFound(result.Error);
+        return Ok(result.Data);
+    }
     
     [HttpGet]
     [Authorize(Roles = "Admin, Vet")]

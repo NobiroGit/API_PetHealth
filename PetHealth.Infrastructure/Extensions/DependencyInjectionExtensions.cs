@@ -22,8 +22,10 @@ public static class DependencyInjectionExtensions
         services.AddScoped<IMedicalDocumentRepository, MedicalDocumentService>();
         services.AddScoped<ITreatmentRepository, TreatmentService>();
         services.AddScoped<IAppointmentRepository, AppointmentService>();
-        services.AddScoped<IPrescriptionRepository, PrescriptionService>();
-        services.AddScoped<IPrescriptionItemRepository, PrescriptionService>();
+        services.AddScoped<PrescriptionService>();
+        services.AddScoped<IPrescriptionRepository>(sp => sp.GetRequiredService<PrescriptionService>());
+        services.AddScoped<IPrescriptionItemRepository>(sp => sp.GetRequiredService<PrescriptionService>());
+        services.AddScoped<IMedicineRepository, MediceService>();
         return services;
     }
 }

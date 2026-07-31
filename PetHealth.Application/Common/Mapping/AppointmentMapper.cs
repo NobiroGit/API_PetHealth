@@ -17,7 +17,9 @@ public static class AppointmentMapper
             Diagnosis = appointment.Diagnosis,
             Notes = appointment.Notes,
             Cost = appointment.Cost,
-            Status = appointment.Status
+            Status = appointment.Status,
+            VetFirstName = appointment.VetFirstName,
+            VetLastName = appointment.VetLastName
         };
     }
 }

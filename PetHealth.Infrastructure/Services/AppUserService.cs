@@ -40,7 +40,7 @@ public class AppUserService : IAppUserRepository
     {
         int rows = await _dbConnection.ExecuteAsync("Usp_AppUser_Register",
             commandType: CommandType.StoredProcedure, param: command);
-        if (rows == 1) return Result.Success();
+        if (rows >= 1) return Result.Success();
         return Result.Failure(Error.NotFound);
     }
 
@@ -48,7 +48,15 @@ public class AppUserService : IAppUserRepository
 
     #region GET
 
-//ADMIN
+    public async Task<Result<AppUserDto>> Execute(GetAppUserByJwtAsync query)
+    {
+        AppUserDto? appUser = await _dbConnection.QueryFirstOrDefaultAsync<AppUserDto>("usp_AppUser_Me",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query));
+        if (appUser == null) return Result<AppUserDto>.Failure(Error.NotFound);
+        return Result<AppUserDto>.Success(appUser);
+    }
+
+    //ADMIN
     public async Task<Result<IEnumerable<AppUserDto>>> Execute(GetAllAppUserAsync query)
     {
         List<AppUser> petOwners =

@@ -39,14 +39,27 @@ public class TreatmentService : ITreatmentRepository
         return Result<IEnumerable<Treatment>>.Success(treatments);
     }
 
+    public async Task<Result<IEnumerable<Treatment>>> Execute(GetByPetIdTreatmentQueryAsync query)
+    {
+        var treatments = (await _dbConnection.QueryAsync<Treatment>("Usp_Treatment_GetByPetId",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        if (!treatments.Any()) return Result<IEnumerable<Treatment>>.Failure(Error.NotFound);
+        return Result<IEnumerable<Treatment>>.Success(treatments);
+    }
+
     #endregion
 
     #region INSERT
 
     public async Task<Result> Execute(InsertTreatmentCommandAsync command)
     {
+        // La procédure déclare @NewId en OUTPUT : il doit être fourni, sinon SQL Server
+        // rejette l'appel ("expects parameter '@NewId', which was not supplied").
+        var parameters = _currentUserRepository.WithUser(command);
+        parameters.Add("NewId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
         int rows = await _dbConnection.ExecuteAsync("Usp_Treatment_Insert",
-            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+            commandType: CommandType.StoredProcedure, param: parameters);
         return rows >= 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 

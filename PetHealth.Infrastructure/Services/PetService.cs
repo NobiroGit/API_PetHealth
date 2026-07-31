@@ -38,6 +38,15 @@ public class PetService : IPetRepository
         return Result<IEnumerable<PetDto>>.Success(pets.Select(p => p.MapToPetDto()).ToList());
     }
 
+    public async Task<Result<IEnumerable<PetDto>>> Execute(GetMyPetsQueryAsync query)
+    {
+        List<Pet> pets = (await _dbConnection.QueryAsync<Pet>("usp_Pet_MyPets",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
+        if (!pets.Any()) return Result<IEnumerable<PetDto>>.Failure(Error.NotFound);
+        
+        return Result<IEnumerable<PetDto>>.Success(pets.Select(p => p.MapToPetDto()).ToList());
+    }
+
     public async Task<Result<PetDto?>> Execute(GetPetByIdQueryAsync query)
     {
         Pet? pet = await _dbConnection.QueryFirstOrDefaultAsync<Pet>("Usp_Pet_GetById",

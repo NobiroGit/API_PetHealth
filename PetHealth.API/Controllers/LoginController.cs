@@ -1,4 +1,5 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
@@ -31,7 +32,7 @@ public class LoginController : Controller
     {
         Result<JwtInfoAppUserDto> result = await _appUserRepository.Execute(new LoginAppUserCommandAsync(dto));
         if (!result.IsSuccess)
-            return BadRequest(result.Error);
+            return NotFound();
 
         //Création du token
 

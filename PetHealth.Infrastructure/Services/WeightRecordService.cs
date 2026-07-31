@@ -70,5 +70,12 @@ public class WeightRecordService : IWeightRecordRepository
         return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
     }
 
+    public async Task<Result> Execute(DeleteWeightRecordTodayCommandAsync command)
+    {
+        int rows = await _dbConnection.ExecuteAsync("usp_WeightRecord_DeleteToday",
+            commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(command));
+        return rows == 1 ? Result.Success() : Result.Failure(Error.NotFound);
+    }
     #endregion
+
 }

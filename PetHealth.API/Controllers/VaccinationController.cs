@@ -22,7 +22,7 @@ public class VaccinationController : Controller
 
     #region GET
 
-    [Authorize(Roles = "Admin, Vet")]
+    [Authorize]
     [HttpGet("{petId:int}")]
     public async Task<ActionResult<IEnumerable<VaccinationDto>>> GetVaccinationsByPetId(int petId)
     {

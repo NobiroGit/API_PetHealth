@@ -6,10 +6,10 @@ namespace PetHealth.Application.Queries.PrescriptionsItem;
 
 public class GetPrescriptionItemByIdQueryAsync: IQueryDefinitionAsync<Result<IEnumerable<PrescriptionItem>>>
 {
-    public int Id { get; init; }
+    public int PrescriptionId { get; init; }
 
-    public GetPrescriptionItemByIdQueryAsync(int id)
+    public GetPrescriptionItemByIdQueryAsync(int prescriptionId)
     {
-        Id = id;
+        PrescriptionId = prescriptionId;
     }
 }

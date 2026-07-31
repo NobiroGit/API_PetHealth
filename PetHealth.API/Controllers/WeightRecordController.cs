@@ -27,6 +27,10 @@ public class WeightRecordController : Controller
     public async Task<ActionResult<Result<IEnumerable<WeightRecordDto>>>> GetWeightRecordByPetId(int petId)
     {
         Result<IEnumerable<WeightRecordDto>> result = await _weightRecordRepository.Execute(new GetWeightRecordByPetIdQueryAsync(petId));
+        foreach (var item in result.Data)
+        {
+            Console.WriteLine(item.WeightKg);
+        }
         if (!result.IsSuccess) return NotFound(result.Error);
         return Ok(result.Data);
     }
@@ -65,6 +69,15 @@ public class WeightRecordController : Controller
     public async Task<ActionResult<Result>> DeleteWeightRecordAsync(int id)
     {
         Result result = await _weightRecordRepository.Execute(new DeleteWeightRecordCommandAsync(id));
+        if (!result.IsSuccess) return BadRequest(result.Error);
+        return Ok(result);
+    }
+
+    [Authorize]
+    [HttpDelete("today/{id:int}")]
+    public async Task<ActionResult<Result>> DeleteWeightRecordByPetId(int id)
+    {
+        Result result = await _weightRecordRepository.Execute(new DeleteWeightRecordTodayCommandAsync(id));
         if (!result.IsSuccess) return BadRequest(result.Error);
         return Ok(result);
     }

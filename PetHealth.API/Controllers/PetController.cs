@@ -30,7 +30,7 @@ public class PetController : ControllerBase
     {
         Result<IEnumerable<PetDto>> pets = await _petRepository.Execute(new GetAllPetsQueryAsync());
         if (!pets.IsSuccess)
-            return StatusCode(StatusCodes.Status500InternalServerError, pets.Error);
+            return NotFound(pets.Error);
         return Ok(pets.Data);
     }
     
@@ -45,6 +45,15 @@ public class PetController : ControllerBase
         return Ok(pet.Data);
     }
 
+    [Authorize]
+    [HttpGet("my-pets")]
+    public async Task<ActionResult<IEnumerable<PetDto>>> GetMyPetsAsync()
+    {
+        Result<IEnumerable<PetDto>> pets = await _petRepository.Execute(new GetMyPetsQueryAsync());
+        if (!pets.IsSuccess)
+            return NotFound(pets.Error);
+        return Ok(pets.Data);
+    }
     #endregion
 
     #region POST

@@ -9,6 +9,7 @@ namespace PetHealth.Application.Repositories;
 public interface IAppUserRepository: 
     IQueryHandlerAsync<GetAllAppUserAsync, Result<IEnumerable<AppUserDto>>>,
     IQueryHandlerAsync<GetAppUserByIdAsync, Result<AppUserDto?>>,
+    IQueryHandlerAsync<GetAppUserByJwtAsync, Result<AppUserDto>>,
     ICommandHandlerAsync<InsertVetAppUserCommandAsync, Result<int>>,
     ICommandHandlerAsync<DeleteAppUserCommandAsync, Result>,
     ICommandHandlerAsync<UpdateAppUserCommandAsync, Result>,

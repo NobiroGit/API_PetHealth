@@ -34,11 +34,22 @@ public class TreatmentController : Controller
 
     [Authorize]
     [HttpGet("User")]
-    public async Task<ActionResult<Result<IEnumerable<Treatment>>>> GetAllTreatmentsByUser(DateTime date)
+    public async Task<ActionResult<Result<IEnumerable<Treatment>>>> GetAllTreatmentsByUser()
     {
         Result<IEnumerable<Treatment>> treatments =
             await _treatmentRepository.Execute(new GetAllByUserTreatmentQueryAsync());
-        if (!treatments.IsSuccess) return BadRequest();
+        if (!treatments.IsSuccess) return NotFound(treatments.Error);
+        return Ok(treatments.Data);
+    }
+
+    // Accessible au propriétaire de l'animal : la procédure autorise Admin/Vet ou l'owner.
+    [Authorize]
+    [HttpGet("Pet/{petId:int}")]
+    public async Task<ActionResult<Result<IEnumerable<Treatment>>>> GetTreatmentsByPetId(int petId)
+    {
+        Result<IEnumerable<Treatment>> treatments =
+            await _treatmentRepository.Execute(new GetByPetIdTreatmentQueryAsync(petId));
+        if (!treatments.IsSuccess) return NotFound(treatments.Error);
         return Ok(treatments.Data);
     }
 

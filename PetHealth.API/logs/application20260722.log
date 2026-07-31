@@ -1,0 +1,627 @@
+2026-07-22 12:11:49.498 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 12:18:35.572 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 12:21:22.132 +02:00[INF] - HTTP GET /scalar/v1 responded 200 in 72.6818 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7RBT3JNDJ:00000001","ConnectionId":"0HNN7RBT3JNDJ","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 12:21:22.148 +02:00[INF] - HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 3.8273 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7RBT3JNDK:00000001","ConnectionId":"0HNN7RBT3JNDK","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 12:21:22.157 +02:00[INF] - HTTP GET /scalar/scalar.js responded 200 in 12.6818 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7RBT3JNDJ:00000002","ConnectionId":"0HNN7RBT3JNDJ","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 12:21:22.399 +02:00[INF] - HTTP GET /openapi/v1.json responded 200 in 112.1106 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7RBT3JNDJ:00000003","ConnectionId":"0HNN7RBT3JNDJ","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 12:22:38.013 +02:00[INF] - HTTP POST /Login responded 200 in 245.7967 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7RBT3JNDL:00000002","ConnectionId":"0HNN7RBT3JNDL","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 13:27:33.078 +02:00[INF] - HTTP POST /Login responded 200 in 42.7265 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7RBT3JNDM:00000002","ConnectionId":"0HNN7RBT3JNDM","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 13:27:41.525 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 13:28:00.982 +02:00[INF] - HTTP POST /Login responded 200 in 160.6111 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V5:00000002","ConnectionId":"0HNN7SH4QF8V5","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 13:35:27.100 +02:00[INF] - HTTP POST /Login responded 200 in 42.6735 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V6:00000002","ConnectionId":"0HNN7SH4QF8V6","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 13:40:49.323 +02:00[INF] - HTTP POST /Login responded 200 in 20.0555 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V7:00000002","ConnectionId":"0HNN7SH4QF8V7","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:00:11.887 +02:00[INF] - HTTP POST /Login responded 200 in 63.3757 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V8:00000002","ConnectionId":"0HNN7SH4QF8V8","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:01:45.879 +02:00[INF] - HTTP POST /Login responded 200 in 10.9705 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V8:00000004","ConnectionId":"0HNN7SH4QF8V8","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:03:33.413 +02:00[INF] - HTTP POST /Login responded 200 in 7.2217 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V8:00000006","ConnectionId":"0HNN7SH4QF8V8","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:04:12.064 +02:00[INF] - HTTP POST /Login responded 200 in 14.2738 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V8:00000008","ConnectionId":"0HNN7SH4QF8V8","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:04:58.253 +02:00[INF] - HTTP POST /Login responded 200 in 6.3420 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V8:0000000A","ConnectionId":"0HNN7SH4QF8V8","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:06:39.277 +02:00[INF] - HTTP POST /Login responded 200 in 8.9709 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V8:0000000C","ConnectionId":"0HNN7SH4QF8V8","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:11:14.219 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8V9:00000002","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8V9","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:11:14.263 +02:00[ERR] - HTTP POST /Login responded 500 in 77.4887 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V9:00000002","ConnectionId":"0HNN7SH4QF8V9","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:13:05.022 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8V9:00000004","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8V9","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:13:05.032 +02:00[ERR] - HTTP POST /Login responded 500 in 17.2958 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V9:00000004","ConnectionId":"0HNN7SH4QF8V9","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:13:07.872 +02:00[INF] - HTTP POST /Login responded 200 in 6.4751 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8V9:00000005","ConnectionId":"0HNN7SH4QF8V9","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:14:39.590 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8VA:00000001","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8VA","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:14:39.598 +02:00[ERR] - HTTP POST /Login responded 500 in 14.9108 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8VA:00000001","ConnectionId":"0HNN7SH4QF8VA","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:19:13.394 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8VB:00000002","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8VB","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:19:13.399 +02:00[ERR] - HTTP POST /Login responded 500 in 19.1265 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8VB:00000002","ConnectionId":"0HNN7SH4QF8VB","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:21:48.974 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8VC:00000002","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8VC","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:21:48.984 +02:00[ERR] - HTTP POST /Login responded 500 in 20.9659 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8VC:00000002","ConnectionId":"0HNN7SH4QF8VC","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:21:55.401 +02:00[INF] - HTTP POST /Login responded 200 in 6.6735 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8VC:00000004","ConnectionId":"0HNN7SH4QF8VC","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:22:34.133 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8VD:00000002","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8VD","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:22:34.137 +02:00[ERR] - HTTP POST /Login responded 500 in 10.7783 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8VD:00000002","ConnectionId":"0HNN7SH4QF8VD","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:24:12.844 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7SH4QF8VE:00000002","RequestPath":"/Login","ConnectionId":"0HNN7SH4QF8VE","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :61aa1947-c487-4d24-b1da-f0f85e4faabb
+Error Number :50005,State :1,Class :16
+2026-07-22 14:24:12.854 +02:00[ERR] - HTTP POST /Login responded 500 in 18.4454 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7SH4QF8VE:00000002","ConnectionId":"0HNN7SH4QF8VE","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:24:38.806 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:24:42.114 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TGQEFIK1:00000002","RequestPath":"/Login","ConnectionId":"0HNN7TGQEFIK1","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 32
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :02a86a50-742f-4cd9-a377-a1a49a0adf88
+Error Number :50005,State :1,Class :16
+2026-07-22 14:24:42.140 +02:00[ERR] - HTTP POST /Login responded 500 in 184.3453 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TGQEFIK1:00000002","ConnectionId":"0HNN7TGQEFIK1","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:25:27.681 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:25:30.131 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1P:00000002","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 33
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :3691d1b3-bb70-4ee7-a327-8ef7a99b600c
+Error Number :50005,State :1,Class :16
+2026-07-22 14:25:30.158 +02:00[ERR] - HTTP POST /Login responded 500 in 186.2053 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:00000002","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:25:34.159 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1P:00000003","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 33
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :3691d1b3-bb70-4ee7-a327-8ef7a99b600c
+Error Number :50005,State :1,Class :16
+2026-07-22 14:25:34.161 +02:00[ERR] - HTTP POST /Login responded 500 in 9.6095 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:00000003","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:25:34.959 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1P:00000004","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 33
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :3691d1b3-bb70-4ee7-a327-8ef7a99b600c
+Error Number :50005,State :1,Class :16
+2026-07-22 14:25:34.963 +02:00[ERR] - HTTP POST /Login responded 500 in 11.1885 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:00000004","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:25:45.342 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1P:00000006","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 33
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :3691d1b3-bb70-4ee7-a327-8ef7a99b600c
+Error Number :50005,State :1,Class :16
+2026-07-22 14:25:45.349 +02:00[ERR] - HTTP POST /Login responded 500 in 12.3850 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:00000006","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:26:00.076 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1P:00000008","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 33
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :3691d1b3-bb70-4ee7-a327-8ef7a99b600c
+Error Number :50005,State :1,Class :16
+2026-07-22 14:26:00.083 +02:00[ERR] - HTTP POST /Login responded 500 in 14.2865 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:00000008","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:26:08.424 +02:00[INF] - HTTP POST /Login responded 200 in 45.6767 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:0000000A","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:26:35.256 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1P:0000000C","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Email or Password invalid
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(LoginAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 31
+   at API_PetHealth.Controllers.LoginController.LoginAsync(LoginAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 33
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :3691d1b3-bb70-4ee7-a327-8ef7a99b600c
+Error Number :50005,State :1,Class :16
+2026-07-22 14:26:35.260 +02:00[ERR] - HTTP POST /Login responded 500 in 7.8346 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1P:0000000C","ConnectionId":"0HNN7TH8ODL1P","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:37:32.554 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1Q:00000002","RequestPath":"/Login","ConnectionId":"0HNN7TH8ODL1Q","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Une erreur liée au réseau ou spécifique à l'instance s'est produite lors de l'établissement d'une connexion à SQL Server. Le serveur est introuvable ou n'est pas accessible. Vérifiez que le nom de l'instance est correct et que SQL Server est configuré pour autoriser les connexions distantes. (provider: Fournisseur TCP, error: 35 - Une exception interne a été interceptée)
+ ---> System.Net.Sockets.SocketException (61): Connection refused
+   at Microsoft.Data.SqlClient.ManagedSni.SniTcpHandle.Connect(String serverName, Int32 port, TimeoutTimer timeout, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.ManagedSni.SniTcpHandle..ctor(String serverName, Int32 port, TimeoutTimer timeout, Boolean parallel, SqlConnectionIPAddressPreference ipPreference, String cachedFQDN, SQLDNSInfo& pendingDNSInfo, Boolean tlsFirst, String hostNameInCertificate, String serverCertificateFilename)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlConnectionInternal connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, DbConnectionPoolGroupProviderInfo providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, IDbConnectionPool pool, Func`3 accessTokenCallback, SspiContextProvider sspiContextProvider)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionPoolGroupProviderInfo poolGroupProviderInfo, IDbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreatePooledConnection(DbConnection owningConnection, IDbConnectionPool pool, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.ConnectionPool.WaitHandleDbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.SqlClient.ConnectionPool.WaitHandleDbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.SqlClient.ConnectionPool.WaitHandleDbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.SqlClient.ConnectionPool.WaitHandleDbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 taskCompletionSource, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, SqlConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, SqlConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PetHealth.Infrastructure.Services.AppUserService..ctor(IDbConnection dbConnection, ICurrentUserRepository currentUserRepository) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 23
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :00000000-0000-0000-0000-000000000000
+Error Number :10061,State :0,Class :20
+2026-07-22 14:37:32.563 +02:00[ERR] - HTTP POST /Login responded 500 in 14564.2961 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1Q:00000002","ConnectionId":"0HNN7TH8ODL1Q","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:42:34.862 +02:00[INF] - HTTP POST /Login responded 404 in 123.0815 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1R:00000002","ConnectionId":"0HNN7TH8ODL1R","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:43:36.452 +02:00[INF] - HTTP POST /Login responded 404 in 31.8837 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1R:00000004","ConnectionId":"0HNN7TH8ODL1R","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:43:50.932 +02:00[INF] - HTTP POST /Login responded 404 in 5.3702 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1R:00000006","ConnectionId":"0HNN7TH8ODL1R","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:44:00.241 +02:00[INF] - HTTP POST /Login responded 200 in 10.8008 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1R:00000008","ConnectionId":"0HNN7TH8ODL1R","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:46:26.566 +02:00[INF] - HTTP POST /Login responded 404 in 15.3055 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1S:00000001","ConnectionId":"0HNN7TH8ODL1S","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:46:55.786 +02:00[INF] - HTTP POST /Login responded 404 in 4.6103 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1T:00000002","ConnectionId":"0HNN7TH8ODL1T","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:55:24.979 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1U:00000002","RequestPath":"/Login/Register","ConnectionId":"0HNN7TH8ODL1U","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Procedure or function 'Usp_AppUser_Register' expects parameter '@NewId', which was not supplied.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__251_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 663
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(RegisterAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 41
+   at API_PetHealth.Controllers.LoginController.RegisterAsync(RegisterAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 72
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :9fd25a23-7ba8-47af-af48-7258caa3f09f
+Error Number :201,State :4,Class :16
+2026-07-22 14:55:24.983 +02:00[ERR] - HTTP POST /Login/Register responded 500 in 77.7318 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1U:00000002","ConnectionId":"0HNN7TH8ODL1U","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:55:49.692 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL1V:00000001","RequestPath":"/Login/Register","ConnectionId":"0HNN7TH8ODL1V","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Procedure or function 'Usp_AppUser_Register' expects parameter '@NewId', which was not supplied.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__251_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 663
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(RegisterAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 41
+   at API_PetHealth.Controllers.LoginController.RegisterAsync(RegisterAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 72
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :9fd25a23-7ba8-47af-af48-7258caa3f09f
+Error Number :201,State :4,Class :16
+2026-07-22 14:55:49.715 +02:00[ERR] - HTTP POST /Login/Register responded 500 in 34.4732 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL1V:00000001","ConnectionId":"0HNN7TH8ODL1V","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 14:59:43.170 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL20:00000002","RequestPath":"/Login/Register","ConnectionId":"0HNN7TH8ODL20","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Procedure or function 'Usp_AppUser_Register' expects parameter '@NewId', which was not supplied.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__251_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 663
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(RegisterAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 41
+   at API_PetHealth.Controllers.LoginController.RegisterAsync(RegisterAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 72
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :9fd25a23-7ba8-47af-af48-7258caa3f09f
+Error Number :201,State :4,Class :16
+2026-07-22 14:59:43.179 +02:00[ERR] - HTTP POST /Login/Register responded 500 in 18.2766 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL20:00000002","ConnectionId":"0HNN7TH8ODL20","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:01:30.917 +02:00[INF] - HTTP POST /Login/Register responded 400 in 61.1881 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL20:00000004","ConnectionId":"0HNN7TH8ODL20","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:06:28.844 +02:00[FTL] - Unhandled exception occurred {"SourceContext":"API_PetHealth.Middlewares.GlobalExceptionHandler","RequestId":"0HNN7TH8ODL21:00000002","RequestPath":"/Login/Register","ConnectionId":"0HNN7TH8ODL21","Application":"PetHealth.API","AppEnv":"Development"}
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot roll back THROW. No transaction or savepoint of that name was found.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__251_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 663
+   at PetHealth.Infrastructure.Services.AppUserService.Execute(RegisterAppUserCommandAsync command) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.Infrastructure/Services/AppUserService.cs:line 41
+   at API_PetHealth.Controllers.LoginController.RegisterAsync(RegisterAppUserDto dto) in /Users/jordanmal/Documents/Projet Développement /PetHealthApplication/API/API_PetHealth/PetHealth.API/Controllers/LoginController.cs:line 72
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId :9fd25a23-7ba8-47af-af48-7258caa3f09f
+Error Number :6401,State :1,Class :16
+2026-07-22 15:06:28.853 +02:00[ERR] - HTTP POST /Login/Register responded 500 in 42.0560 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL21:00000002","ConnectionId":"0HNN7TH8ODL21","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:06:38.531 +02:00[INF] - HTTP POST /Login/Register responded 400 in 10.0842 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7TH8ODL21:00000004","ConnectionId":"0HNN7TH8ODL21","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:07:04.210 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:07:11.749 +02:00[INF] - HTTP POST /Login/Register responded 200 in 170.8469 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD29:00000002","ConnectionId":"0HNN7U8I9GD29","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:07:43.729 +02:00[INF] - HTTP POST /Login responded 200 in 61.8167 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD29:00000004","ConnectionId":"0HNN7U8I9GD29","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:41:00.697 +02:00[INF] - HTTP POST /Login responded 200 in 28.3125 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2A:00000002","ConnectionId":"0HNN7U8I9GD2A","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 15:43:54.515 +02:00[INF] - HTTP POST /Login responded 200 in 11.9651 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2B:00000002","ConnectionId":"0HNN7U8I9GD2B","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:11:30.136 +02:00[INF] - HTTP POST /Login responded 404 in 95.0461 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2C:00000001","ConnectionId":"0HNN7U8I9GD2C","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:12:45.849 +02:00[INF] - HTTP POST /Login responded 404 in 5.1302 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2D:00000001","ConnectionId":"0HNN7U8I9GD2D","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:14:13.048 +02:00[INF] - HTTP POST /Login responded 200 in 12.8347 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2E:00000004","ConnectionId":"0HNN7U8I9GD2E","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:14:14.926 +02:00[INF] - HTTP GET /api/AppUser/1 responded 200 in 58.2992 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2E:00000006","ConnectionId":"0HNN7U8I9GD2E","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:16:47.103 +02:00[INF] - HTTP GET /api/AppUser/1 responded 200 in 5.7678 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7U8I9GD2F:00000002","ConnectionId":"0HNN7U8I9GD2F","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:09.907 +02:00[INF] - Application started {"Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:12.574 +02:00[INF] - HTTP GET /scalar/v1 responded 200 in 70.7517 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER5V:00000001","ConnectionId":"0HNN7VMUNER5V","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:12.604 +02:00[INF] - HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 3.5235 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER5V:00000002","ConnectionId":"0HNN7VMUNER5V","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:12.617 +02:00[INF] - HTTP GET /scalar/scalar.js responded 200 in 16.5251 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER60:00000001","ConnectionId":"0HNN7VMUNER60","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:12.857 +02:00[INF] - HTTP GET /openapi/v1.json responded 200 in 109.7153 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER60:00000002","ConnectionId":"0HNN7VMUNER60","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:13.064 +02:00[INF] - HTTP GET /scalar/favicon.svg responded 200 in 0.4213 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER60:00000003","ConnectionId":"0HNN7VMUNER60","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:30:51.856 +02:00[INF] - HTTP POST /Login responded 200 in 201.4093 ms {"UserId":"Anonymous","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER60:00000004","ConnectionId":"0HNN7VMUNER60","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:31:09.518 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 30.4383 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER60:00000005","ConnectionId":"0HNN7VMUNER60","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:32:32.998 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 11.5141 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:00000002","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:33:28.620 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 6.4163 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:00000004","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:33:30.232 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 3.8090 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:00000005","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:33:32.081 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 3.4638 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:00000006","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:35:29.726 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 9.0442 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:00000008","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:35:59.034 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 3.8529 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:0000000A","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:36:04.188 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 4.5105 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:0000000C","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:36:05.931 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 3.0955 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER61:0000000D","ConnectionId":"0HNN7VMUNER61","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:39:20.364 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 9.6410 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER62:00000002","ConnectionId":"0HNN7VMUNER62","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:39:38.387 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 8.8920 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER62:00000004","ConnectionId":"0HNN7VMUNER62","Application":"PetHealth.API","AppEnv":"Development"}
+2026-07-22 16:46:03.602 +02:00[INF] - HTTP GET /api/AppUser/me responded 200 in 36.8971 ms {"UserId":"1","RemoteIP":"::1","SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNN7VMUNER63:00000002","ConnectionId":"0HNN7VMUNER63","Application":"PetHealth.API","AppEnv":"Development"}

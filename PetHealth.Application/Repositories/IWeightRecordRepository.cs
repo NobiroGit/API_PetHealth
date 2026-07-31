@@ -10,7 +10,8 @@ public interface IWeightRecordRepository:
     IQueryHandlerAsync<GetWeightRecordByPetIdQueryAsync, Result<IEnumerable<WeightRecordDto>>>,
     ICommandHandlerAsync<InsertWeightRecordCommandAsync, Result>,
     ICommandHandlerAsync<UpdateWeightRecordCommandAsync, Result>,
-    ICommandHandlerAsync<DeleteWeightRecordCommandAsync, Result>
+    ICommandHandlerAsync<DeleteWeightRecordCommandAsync, Result>,
+    ICommandHandlerAsync<DeleteWeightRecordTodayCommandAsync, Result>
 {
     
 }

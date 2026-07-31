@@ -80,7 +80,7 @@ public class PrescriptionService : IPrescriptionRepository, IPrescriptionItemRep
 
     public async Task<Result<IEnumerable<PrescriptionItem>>> Execute(GetPrescriptionItemByIdQueryAsync query)
     {
-        var prescriptionsItem = (await _dbConnection.QueryAsync<PrescriptionItem>("Usp_PrescriptionItem_GetById",
+        var prescriptionsItem = (await _dbConnection.QueryAsync<PrescriptionItem>("usp_PrescriptionItem_GetByPrescriptionId",
             commandType: CommandType.StoredProcedure, param: _currentUserRepository.WithUser(query))).ToList();
         if (!prescriptionsItem.Any()) return Result<IEnumerable<PrescriptionItem>>.Failure(Error.NotFound);
         return Result<IEnumerable<PrescriptionItem>>.Success(prescriptionsItem);

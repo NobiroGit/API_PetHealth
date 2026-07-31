@@ -10,6 +10,7 @@ namespace PetHealth.Application.Repositories;
 public interface IPetRepository: 
     IQueryHandlerAsync<GetAllPetsQueryAsync, Result<IEnumerable<PetDto>>>,
     IQueryHandlerAsync<GetPetByIdQueryAsync, Result<PetDto?>>,
+    IQueryHandlerAsync<GetMyPetsQueryAsync, Result<IEnumerable<PetDto>>>,
     ICommandHandlerAsync<InsertPetCommandAsync, Result<int>>,
     ICommandHandlerAsync<DeletePetCommandAsync, Result>,
     ICommandHandlerAsync<UpdatePetCommandAsync, Result>,
