@@ -25,7 +25,7 @@ public class GlobalExceptionHandler : IExceptionHandler
             ValidationException => (StatusCodes.Status400BadRequest, "Validation error"),
             UnauthorizedAccessException => (StatusCodes.Status401Unauthorized, "Unauthorized"),
             KeyNotFoundException => (StatusCodes.Status404NotFound, "Not found"),
-            SqlException => (StatusCodes.Status500InternalServerError, "Database error"),
+            SqlException => (StatusCodes.Status500InternalServerError, "Database error !"),
             _ => (StatusCodes.Status500InternalServerError, "Internal server error")
         };
 
